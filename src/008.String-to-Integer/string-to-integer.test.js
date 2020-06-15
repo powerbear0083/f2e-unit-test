@@ -28,14 +28,6 @@ describe("String to Integer (atoi)", () => {
       //assert
      expect(myAtoi(input)).toEqual(expected);
     });
-    test("Input:4193 with words, target=4193", () => {
-      //arragne
-      const input = "4193 with words"
-      const expected = 4193
-      //actual       
-      //assert
-     expect(myAtoi(input)).toEqual(expected);
-    });
     test("Input:words and 987, target=4193", () => {
       //arragne
       const input = "words and 987"

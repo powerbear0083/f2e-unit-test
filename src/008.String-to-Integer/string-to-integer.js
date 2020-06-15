@@ -9,5 +9,14 @@ const myAtoi = function(str) {
     if( Number(str) < 0 ) {
         return Number(str)
     }
+    if(  isNaN( Number(str) )  ) {
+        let result
+        str.split(' ').forEach(element => {
+            if ( Number(element) ) {
+                result = Number(element)
+            }
+        });
+        return result
+    }
 };
 export default myAtoi;
