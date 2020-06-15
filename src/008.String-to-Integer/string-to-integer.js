@@ -11,9 +11,13 @@ const myAtoi = function(str) {
     }
     if(  isNaN( Number(str) )  ) {
         let result
-        str.split(' ').forEach(element => {
-            if ( Number(element) ) {
+        str.split(' ').forEach( (element, index) => {
+
+            if (index === 0 && Number(element) ) {
                 result = Number(element)
+            }
+            if ( index === 0 && isNaN( Number(element) )  ) {
+                result = 0
             }
         });
         return result
