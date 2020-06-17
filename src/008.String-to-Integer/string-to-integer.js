@@ -3,13 +3,21 @@
  * @return {number}
  */
 const myAtoi = function(str) {
-    if( Number(str) > 0 ) {
+    const isNumber = Number(str) 
+    const maxValue = Math.pow(2, 32)
+    if( isNumber > 0 ) {
+        if( Number(str) > maxValue ) {
+            return Math.pow(2, 31)
+        }
         return Number(str)
     }
-    if( Number(str) < 0 ) {
+    if( isNumber < 0 ) {
+        if( Number(str) * -1 > maxValue ) {
+            return Math.pow(-2, 31)
+        }
         return Number(str)
     }
-    if(  isNaN( Number(str) )  ) {
+    if(  isNaN( isNumber )  ) {
         let result
         str.split(' ').forEach( (element, index) => {
 
